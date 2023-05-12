@@ -4,9 +4,9 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/AimsProject/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Lab01/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Lab02/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src/hust/soict/globalict/Lab01/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src/hust/soict/globalict/Lab02/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
