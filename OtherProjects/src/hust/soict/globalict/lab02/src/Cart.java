@@ -1,4 +1,4 @@
-import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
 
 import java.util.Objects;
 
