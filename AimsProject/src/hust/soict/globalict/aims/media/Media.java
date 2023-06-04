@@ -74,7 +74,7 @@ public abstract class Media {
     public static void main(String[] args) {
         DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         CompactDisc cd = new CompactDisc("Hello", "Ballad", 5f);
-        Book book = new Book("Jungle");
+        Book book = new Book("Jungle", "Alan Kay", 12f);
 
         List<Media> media = new ArrayList<Media>();
         media.add(dvd);

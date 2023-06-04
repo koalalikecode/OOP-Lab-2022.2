@@ -1,10 +1,7 @@
 package hust.soict.globalict.aims;
 
 import hust.soict.globalict.aims.cart.Cart;
-import hust.soict.globalict.aims.media.CompactDisc;
-import hust.soict.globalict.aims.media.DigitalVideoDisc;
-import hust.soict.globalict.aims.media.Media;
-import hust.soict.globalict.aims.media.Playable;
+import hust.soict.globalict.aims.media.*;
 import hust.soict.globalict.aims.store.Store;
 
 import java.util.Scanner;
@@ -95,8 +92,8 @@ public class Aims {
     public static void seeCurrentCart(Cart anOrder) {
         Scanner scanner = new Scanner(System.in);
         int choice4;
-        anOrder.printCart();
         do {
+            anOrder.printCart();
             cartMenu();
             choice4 = scanner.nextInt(); scanner.nextLine();
             switch (choice4) {
@@ -130,6 +127,11 @@ public class Aims {
                     Media m = searchMediaByNameCart(anOrder);
                     anOrder.removeMedia(m);
                 }
+                case 4 -> {
+                    Media m = searchMediaByNameCart(anOrder);
+                    if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) ((Playable) m).play();
+                    else System.out.println("Wrong media's name or media cannot play!");
+                }
                 case 5 -> {
                     System.out.println("The order is created!");
                     anOrder.removeAllMedia();
@@ -146,12 +148,16 @@ public class Aims {
                 "Roger Allers", 87, 19.95f);
         store.addMedia(dvd1);
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction",
-                "George Lucas", 87, 24.95f);
-        store.addMedia(dvd2);
-
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         store.addMedia(dvd3);
+
+        CompactDisc cd1 = new CompactDisc("Lovely", "Ballad",
+                "George Lucas", 87, 24.95f);
+        store.addMedia(cd1);
+
+        Book book1 = new Book("DevUp", "Soft Skill", 10.4f);
+        store.addMedia(book1);
+
         //Create a new cart
         Cart anOrder = new Cart();
 

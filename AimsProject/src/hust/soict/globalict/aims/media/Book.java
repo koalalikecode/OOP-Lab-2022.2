@@ -35,4 +35,10 @@ public class Book extends Media {
             System.out.println("Remove author successfully!");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Book - " + this.getTitle() + " - " + this.getCategory() +
+                ": " + this.getCost() + "$";
+    }
 }
