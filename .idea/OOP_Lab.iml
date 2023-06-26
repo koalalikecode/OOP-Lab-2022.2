@@ -7,8 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src/hust/soict/globalict/lab01/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OtherProjects/src/hust/soict/globalict/lab02/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GUIProject/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

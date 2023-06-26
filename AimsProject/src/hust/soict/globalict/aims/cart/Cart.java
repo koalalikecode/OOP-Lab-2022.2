@@ -3,12 +3,23 @@ package hust.soict.globalict.aims.cart;
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
 import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.media.MediaComparatorByTitleCost;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 
 import java.util.*;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public void setItemsOrdered(ObservableList<Media> itemsOrdered) {
+        this.itemsOrdered = itemsOrdered;
+    }
 
     public void addMedia(Media media) {
         if(itemsOrdered.size() == MAX_NUMBERS_ORDERED) System.out.println("The cart is almost full");
