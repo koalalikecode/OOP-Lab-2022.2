@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.screen;
 
 import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.exception.PlayerException;
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
 import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.media.Playable;
@@ -100,7 +101,12 @@ public class CartScreenController {
     @FXML
     void btnPlayPressed(ActionEvent e) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
-        String playContent = ((DigitalVideoDisc) media).play();
+        String playContent = null;
+        try {
+            playContent = ((DigitalVideoDisc) media).play();
+        } catch (PlayerException ex) {
+            System.out.println(ex.getMessage());
+        }
 
         play_content.setText(playContent);
     }
