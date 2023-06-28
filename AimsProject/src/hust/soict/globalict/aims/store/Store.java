@@ -10,6 +10,10 @@ public class Store {
     public static final int MAX_NUMBERS_MEDIAS = 20;
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
     public void addMedia(Media media) {
         if(itemsInStore.size() == MAX_NUMBERS_MEDIAS) System.out.println("The store is almost full");
         else {

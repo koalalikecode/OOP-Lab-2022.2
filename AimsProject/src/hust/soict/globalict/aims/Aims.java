@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims;
 
 import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.exception.PlayerException;
 import hust.soict.globalict.aims.media.*;
 import hust.soict.globalict.aims.store.Store;
 
@@ -129,7 +130,13 @@ public class Aims {
                 }
                 case 4 -> {
                     Media m = searchMediaByNameCart(anOrder);
-                    if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) ((Playable) m).play();
+                    if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) {
+                        try {
+                            ((Playable) m).play();
+                        } catch (PlayerException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }
                     else System.out.println("Wrong media's name or media cannot play!");
                 }
                 case 5 -> {
@@ -182,7 +189,13 @@ public class Aims {
                                     choice3 = scanner.nextInt(); scanner.nextLine();
                                     if (choice3 ==1) anOrder.addMedia(m);
                                     else if (choice3 == 2) {
-                                        if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) ((Playable) m).play();
+                                        if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) {
+                                            try {
+                                                ((Playable) m).play();
+                                            } catch (PlayerException e) {
+                                                System.out.println(e.getMessage());
+                                            }
+                                        }
                                         else System.out.println("Wrong media's name or media cannot play!");
                                     }
                                 }
@@ -194,7 +207,13 @@ public class Aims {
                             }
                             case 3 -> {
                                 Media m = searchMediaByName(store);
-                                if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) ((Playable) m).play();
+                                if (m instanceof DigitalVideoDisc || m instanceof CompactDisc) {
+                                    try {
+                                        ((Playable) m).play();
+                                    } catch (PlayerException e) {
+                                        System.out.println(e.getMessage());
+                                    }
+                                }
                                 else System.out.println("Wrong media's name or media cannot play!");
                             }
                             case 4 -> seeCurrentCart(anOrder);
